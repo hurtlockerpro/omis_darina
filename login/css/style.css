@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+#mainLoginForm{
+    border: 1px solid red;
+    width: 200px;
+    /*margin: auto;*/
+    text-align: center;
+}
+
+#mainLoginForm h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+#mainLoginForm > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+#mainLoginForm input[name="username"],
+#mainLoginForm input[name="password"] {
+    border: 0;
+    border-bottom: 2px solid gray;
+    height: 25px;
+    margin: 5px;
+} 
+
+#mainLoginForm input[type="submit"]{
+    -webkit-box-shadow: 10px 10px 24px -7px rgb(0 0 0 / 70%);
+    box-shadow: 10px 10px 24px -7px rgb(0 0 0 / 70%);
+    width: 87%;
+    border: 0;
+    border-radius: 15px;
+    height: 25px;
+    background-color: green;
+
+    color: white;
+    text-transform: uppercase;
+    
+    margin-top: 15px;
+}
