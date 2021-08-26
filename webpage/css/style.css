@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+:root {
+    --main-color: #5361FF;
+    --box-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav, #carouselExampleIndicators {
+    width: 80%;
+    margin: auto;
+}
+
+nav {
+    height: 50px;
+}
+
+header {
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+#navbarSupportedContent{
+    flex-grow: 0 !important;
+    height: 250px;
+}
+
+#navbarSupportedContent img {
+    height: 250px;
+}
+
+.carousel-inner {
+    height: 250px;
+}
+
+/* HEADERS */
+
+.beautiful {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+.beautiful::after {
+    content: '';
+    display: block;
+    width: 5%;
+
+    position: relative;
+    margin: auto;
+    
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* PILLS */
+.contentBlock .active{
+    margin: 5px;
+    background-color: gainsboro !important;
+}
+
+.contentBlock .active:hover{
+    background-color: var(--main-color) !important;
+}
+
+/* PORTFOLIO BOX */
+
+.portfolioBox {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
+    width: 100%;
+    height: 150px;
+}
+
+.portfolioBox .detailsView {
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+
+    transition: .5s;
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 26px;
+}
+.detailsView a {
+    text-decoration: none;
+    color: gray;
+}
+
+
+.portfolioBox:hover .detailsView {
+    bottom: 0;
+}

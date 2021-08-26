@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPage</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-F7WyTLiiiPqvu2pGumDR15med0MDkUIo5VTVyyfECR5DZmCnDhti9q5VID02ItWjq6fvDfMaBaDl2J3WdL1uxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <header>
+        <!-- main navigation bar -->
+        <nav class="navbar navbar-expand-md navbar-light justify-content-center">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">John Doe</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+        <!-- / main navigation bar -->
+          
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/slide_1.jpg" class="d-block w-100" alt="Slide 1">
+              </div>
+              <div class="carousel-item">
+                <img src="img/slide_2.jpg" class="d-block w-100" alt="Slide 2">
+              </div>
+              <div class="carousel-item">
+                <img src="img/slide_3.jpg" class="d-block w-100" alt="Slide 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>  
+    </header>
+    
+    <div id="body">
+        <h1 class="beautiful">About</h1>
+
+        <h1 class="beautiful">Skills</h1>
+        <div class="contentBlock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Development</h2>
+
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Link</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-4 d-none d-sm-block">image image image</div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="beautiful">Portfolio</h1>
+        <div class="contentBlock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+
+                        <div class="portfolioBox m-2 d-flex justify-content-center">
+                            <img src="img/scissors.png">
+                            <div class="detailsView">
+                                <a href="">view details</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="portfolioBox m-2 d-flex justify-content-center">
+                            <img src="img/scissors.png">
+                            <div class="detailsView">
+                                <a href="">view details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="portfolioBox m-2 d-flex justify-content-center">
+                            <img src="img/scissors.png">
+                            <div class="detailsView">
+                                <a href="">view details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="portfolioBox m-2 d-flex justify-content-center">
+                            <img src="img/scissors.png">
+                            <div class="detailsView">
+                                <a href="">view details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4"></div>
+                    <div class="col-12 col-sm-4"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js" integrity="sha512-NWNl2ZLgVBoi6lTcMsHgCQyrZVFnSmcaa3zRv0L3aoGXshwoxkGs3esa9zwQHsChGRL4aLDnJjJJeP6MjPX46Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</body>
+</html>
