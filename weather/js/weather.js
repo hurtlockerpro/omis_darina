@@ -8,14 +8,8 @@
 
 // e94a06c22c14c9ab3059f89372eb2541
 
-class Weather {
-     
-    settings = {
-        url: 'https://api.openweathermap.org/data/2.5/weather',
-        q:'Tallinn',
-        appid: 'e94a06c22c14c9ab3059f89372eb2541',
-        units: Weather.units.imperial
-    }
+
+class Weather extends Url {
 
     static units = {
         standard: 'standard',
@@ -23,31 +17,16 @@ class Weather {
         imperial: 'imperial'
     }
 
-    constructor(settings = {empty:true}){
+    constructor(settings){
+        super()
 
-        if (typeof settings == 'object' && settings.empty == false)
-        {
-            if(settings.hasOwnProperty('url') == true) this.settings.url = settings.url
-            if(settings.hasOwnProperty('q')) this.settings.q = settings.q
-            if(settings.hasOwnProperty('appid')) this.settings.appid = settings.appid
-        }
+        this.parseSettings(settings)
 
         this.checkDayPart()
 
         this.getData()
 
         console.log('---end of class ---')
-    }
-
-    generateApiUrl(){
-
-        //console.log(Object.entries(this.settings))
-        let urlItems = []
-        Object.entries(this.settings).forEach(item => {
-            if (item[0] != 'url') urlItems.push(item[0] + '=' + item[1])
-        })
-
-        return this.settings.url + '?' + urlItems.join('&')
     }
 
     getData(){
@@ -97,6 +76,9 @@ class Weather {
 }
 
 let settings = {
+    url: 'https://api.openweathermap.org/data/2.5/weather',
+    q:'Tallinn',
+    appid: 'e94a06c22c14c9ab3059f89372eb2541',
     units: Weather.units.imperial
 }
 let w = new Weather(settings)
