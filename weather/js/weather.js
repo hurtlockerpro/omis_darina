@@ -102,3 +102,43 @@ let settings = {
 let w = new Weather(settings)
 console.log(w.generateApiUrl())
 w.getData()
+
+
+
+/* jQuery */ 
+
+// document.querySelector()
+console.log($('#weather').html())
+console.log($('input[type="checkbox"]').val())
+
+let state = 'on'
+
+$('input[type="checkbox"]').on('change', (event) => {
+    //console.log(event)
+    
+    /*
+    if (state == 'off') {
+        $('#temp').fadeIn(2000, () => {
+            console.log('off: effect is ended')
+        })
+        state = 'on'
+    } else {
+        $('#temp').fadeOut(2000, () => {
+            console.log('on: effect is ended')
+        })
+        state = 'off'
+    }
+    */
+    if (state == 'off') {
+        w.settings.units = Weather.units.imperial
+        w.getData()
+
+        state = 'on'
+    } else {
+        w.settings.units = Weather.units.metric
+        w.getData()
+
+        state = 'off'
+    }
+
+})
