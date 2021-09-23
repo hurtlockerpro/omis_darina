@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="stretch">
+            <div class="container_image">
+                <img src="./img_hello.jpeg" alt="Hello, user!">
+                <div class="container_image_text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat urna quam, sit amet
+                        laoreet
+                        enim facilisis nec. </p>
+                </div>
+            </div>
+
+            <div class="container_entry">
+                <h1>Welcome</h1>
+                <h2>User Login</h2>
+
+                <div id="error"></div>
+
+                <div class="form">
+                    <form action="#" id="form" class="form_body">
+                        <div class="form_item">
+                            <input id="name" type="text" name="login" placeholder="Email or Username" required>
+                        </div>
+
+                        <div class="form_item">
+                            <input type="password" name="password" placeholder="Password" id="password" required>
+                        </div>
+
+                        <div>
+                            <input id="remember_sign" type="checkbox">
+                            <label for="remember_sign">Remember me</label>
+                        </div>
+
+                        <div>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button class="form_button" type="submit">LOG IN</button>
+
+                        <div>
+                            <a href="#">Create Account</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./js.js"></script>
+</body>
+
+</html>

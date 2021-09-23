@@ -1,0 +1,22 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "first",
+    "node",
+    "typescript"
+  ],
+  "author": "vladimir kähri",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.6"
+  }
+}
