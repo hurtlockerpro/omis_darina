@@ -19,6 +19,7 @@ let cars2:ICars[] = [
     }
 ]
 
+
 let num = 10
 cars2[0].name = num.toString()
 
