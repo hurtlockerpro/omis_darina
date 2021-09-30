@@ -31,4 +31,18 @@ app.get('/', function (req, res) {
 app.get('/books', function (req, res) {
     res.send(books);
 });
+app.delete('/books/delete/:isbn', function (req, res) {
+    let isbn = req.params.isbn;
+    console.log(isbn);
+    books.forEach((book, index) => {
+        if (book.isbn == isbn) {
+            books.splice(index, 1);
+        }
+    });
+    let requestResult = {
+        status: 201,
+        message: 'deleted successfully'
+    };
+    res.status(requestResult.status).send(requestResult);
+});
 app.listen(3000, () => console.log('Server is working...'));
