@@ -3,6 +3,15 @@ import { IBook } from "./IBook"
 const express = require('express')
 const app = express()
 
+var bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+
+app.use(bodyParser.json())
+
 let books:IBook[] = [
     {
         isbn:'isbn1',
@@ -47,10 +56,27 @@ app.delete('/books/delete/:isbn', function (req, res) {
     })
     
     let requestResult = {
-        status: 201, // TODO: check for deletion
+        status: 200, // TODO: check for deletion
         message: 'deleted successfully'
     }
     res.status(requestResult.status).send(requestResult)
+})
+
+
+app.post('/books/new', function(req, res){
+    
+    let newBook = JSON.parse(req.body.formData)
+    console.log(newBook)
+    let book:IBook = {
+        isbn: newBook.bookIsbn,
+        title: newBook.bookTitle,
+        description: newBook.bookDescription,
+        author: newBook.bookAuthor,
+        year: newBook.bookYear
+    }
+    books.push(book)
+
+    res.status(200).send({result: 'Success', book: book})
 })
  
 app.listen(3000, () => console.log('Server is working...'))

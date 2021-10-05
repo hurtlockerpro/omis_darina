@@ -8,6 +8,7 @@ let cardText = 'book description'
 let btnEditTitle = 'Edit'
 let btnDeleteTitle = 'Delete'
 
+let whatBtnClicked = '' // edit , new
 
 function getFormHTML(){
 
@@ -16,17 +17,41 @@ function getFormHTML(){
     .then(data => {
         myModalBody.innerHTML =  data
     })
- 
 }
 
 myModal.addEventListener('show.bs.modal', function () {
-  myModalTitle.innerText = 'Hello modal!'
-  getFormHTML()
-  console.log('show')
+
+    let btnSaveChanges = document.getElementById('btnSaveChanges')
+    if (whatBtnClicked == 'new')
+    {
+        btnSaveChanges.innerHTML = 'Add new Book'
+    } 
+    else if (whatBtnClicked == 'edit')
+    {
+        btnSaveChanges.innerHTML = 'Edit Book'
+    }
+
+    myModalTitle.innerText = 'Hello modal!'
+    getFormHTML()
+    console.log('show')
 })
 
 myModal.addEventListener('shown.bs.modal', function () {
     console.log('shown')
+
+    if (whatBtnClicked == 'new')
+    {
+    } 
+    else if (whatBtnClicked == 'edit')
+    {
+        document.getElementById('bookIsbn').setAttribute('disabled', 'disabled')
+    }
+    
+})
+
+myModal.addEventListener('hide.bs.modal', function () {
+    console.log('hide')
+    getData()
 })
 
 
@@ -50,6 +75,7 @@ let getData = () => {
 
         
         addEventListenerToDelete()
+        addEventListenerToEdit()
 
     })
 }
@@ -83,7 +109,7 @@ function addEventListenerToDelete(){
             .then(response => response.json())
             .then(data => {
 
-                if (data.status == 201){
+                if (data.status == 200){
                     getData()
                 }
                 console.log(data.message)
@@ -91,3 +117,59 @@ function addEventListenerToDelete(){
         })
     })
 }
+
+function addEventListenerToEdit(){
+
+    Array.from(document.getElementsByClassName('btn-primary'))
+    .forEach(btn => {
+        btn.addEventListener('click', event => {
+            whatBtnClicked = 'edit'
+
+            // new bootstrap.Modal(myModal).show()
+
+        })
+    })
+}
+
+
+document.getElementById('btnAddNew').addEventListener('click', event  => {
+    
+    whatBtnClicked = 'new'
+
+    getFormHTML()   
+    let myModal2 = new bootstrap.Modal(myModal)
+    myModal2.show()
+})
+
+
+document.getElementById('btnSaveChanges').addEventListener('click', event  => {
+    console.log('btnSaveChanges')
+
+    let frm = document.getElementById('frmBook')
+    let formData = new FormData(frm);
+
+    console.log(Array.from(formData))
+    let myData = []
+    Array.from(formData).forEach(item => {
+        myData[item[0]] = item[1];
+    })
+    let data = Object.assign({}, myData)
+    console.log(data)
+
+
+    fetch('http://localhost:3000/books/new', {
+        method: 'POST',
+        body: 'formData=' + JSON.stringify(data),
+        headers: {
+            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        
+    })
+
+    var modal = bootstrap.Modal.getOrCreateInstance(myModal)
+    modal.hide()
+})
